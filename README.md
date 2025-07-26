@@ -8,8 +8,8 @@ An organized and accesible financial manager dedicated to track personal finance
     - records expenses and debts allowing for organized financial allocations
 
 - **Financial report**
-    - generate monthly financial report in pdf format
-    - supports 
+    - generate monthly/yearly financial report in pdf format
+    - structured and organized financial report format
 
 - **Data visualization**
     - Bar chart
