@@ -17,7 +17,7 @@ const StorageContext = createContext<StorageType | null>(null);
 
 export function StorageProvider({ children }: { children: React.ReactNode }) {
 	const [storage, setStorage] = useState<BalanceType[]>([
-		{ netWorth: 0, totalAssets: 0, totalLiabilities: 0 },
+		{ netWorth: 100000, totalAssets: 2000, totalLiabilities: 0 },
 	]);
 
 	return (

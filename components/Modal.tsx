@@ -1,6 +1,6 @@
 function Modal() {
 	return (
-		<div className='bg-zinc-400 w-fit h-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[32px]  '>
+		<div className='bg-zinc-400 max-w-md h-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[32px]  '>
 			<h1>New Transaction</h1>
 			<nav>
 				<button>Expense</button>
@@ -55,6 +55,7 @@ function Modal() {
 						placeholder='Enter description (optional)'
 					></textarea>
 				</label>
+                <button type="submit">Save</button>
 			</form>
 		</div>
 	);
