@@ -1,4 +1,5 @@
 'use client';
+import { format } from 'date-fns';
 import { useState } from 'react';
 import { useStorage } from '@/context/useStorage';
 import Modal from '@/components/Modal';
@@ -14,36 +15,36 @@ function Home() {
 
 	return (
 		<div className='h-screen w-full bg-gray-200 grid grid-cols-[1fr_300px]'>
-			<section className='bg-green-400 grid grid-cols-2 grid-rows-2'>
-				<div className='col-start-[1] col-end-[2] bg-pink-500'>
-					<MainCard
-						title='Net Worth'
+			<section className='bg-green-400 grid grid-cols-2 grid-rows-2 place-items-center gap-[1rem] p-[1rem]'>
+				<MainCard
+					style='bg-(--card-background) w-full min-h-[80%] col-start-[1] col-end-[2] rounded-lg flex flex-col justify-between p-[1rem]'
+					title='Net Worth'
+					currency='$'
+					balance={storage[0].netWorth}
+					date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
+				/>
+				<div className='w-full min-h-[80%] grid grid-rows-2 gap-[12px] '>
+					<SubCard
+						style='bg-(--card-background) row-start-1 row-end-2 rounded-lg flex flex-col justify-between p-[1rem]'
+						title='Assets'
+						headColor='text-[1.1rem] text-green-500'
+						balance={storage[0].totalAssets}
 						currency='$'
-						balance={storage[0].netWorth}
-						date={`${new Date()}`}
+						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
+					/>
+					<SubCard
+						style='bg-(--card-background) row-start-2 row-end-3 rounded-lg flex flex-col justify-between p-[1rem]'
+						title='Liabilities'
+						headColor='text[1.1rem] text-red-500'
+						balance={storage[0].totalLiabilities}
+						currency='$'
+						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
 					/>
 				</div>
 
-				<div className='grid grid-rows-2'>
-					<div className='bg-yellow-400 row-start-1 row-end-2'>
-						<SubCard
-							title='Total Assets'
-							balance={storage[0].totalAssets}
-							currency='$'
-							date={`${new Date()}`}
-						/>
-					</div>
-					<div className='bg-red-400'>
-						<SubCard
-							title='Total Liabilities'
-							balance={storage[0].totalLiabilities}
-							currency='$'
-							date={`${new Date()}`}
-						/>
-					</div>
+				<div>
+					<h1>Chart here</h1>
 				</div>
-
-				<div><h1>Chart here</h1></div>
 			</section>
 			<section className='bg-blue-400'>
 				<RightSideBar>
