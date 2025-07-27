@@ -3,31 +3,34 @@ type Cards = {
 	balance: number;
 	currency: string;
 	date?: string;
+	style?: string;
+    headColor?: string;
 	accountName?: string;
 	accountCategory?: string;
 };
 
-function MainCard({ title, balance, currency, date }: Cards) {
+function MainCard({ style, title, balance, currency, date }: Cards) {
 	return (
-		<div>
-			<h1>{title}</h1>
-			<h2>
-				<span>{currency}</span>{balance}
+		<div className={style}>
+			<h1 className='font-outfit text-[3rem] text-purple-600 justify-self-center'>{title}</h1>
+			<h2 className='text-[3rem]'>
+				<span className="text-yellow-400">{currency} </span>
+				{balance}
 			</h2>
-            <h3>As of {date}</h3>
+			<h3 className=''>As of {date}</h3>
 		</div>
 	);
 }
 
-function SubCard({ title, balance, currency, date }: Cards) {
+function SubCard({ style, headColor, title, balance, currency, date }: Cards) {
 	return (
-		<div>
-			<h1>{title}</h1>
-			<h2>
+		<div className={style}>
+			<h1 className={headColor}>{title}</h1>
+			<h2 className="text-[1.7rem]">
 				<span>{currency}</span>
 				{balance}
 			</h2>
-			<h3>
+			<h3 className="justify-self-end self-end text-[0.8rem]">
 				As of <span>{date}</span>
 			</h3>
 		</div>
@@ -35,7 +38,7 @@ function SubCard({ title, balance, currency, date }: Cards) {
 }
 
 function AccountCard({
-    title,
+	title,
 	currency,
 	balance,
 	accountName,
