@@ -1,13 +1,16 @@
 'use client';
 import { useState } from 'react';
+import { useStorage } from '@/context/useStorage';
 import Modal from '@/components/Modal';
 import RightSideBar from '@/components/RightSideBar';
 import { MainCard, SubCard, AccountCard } from '@/components/ui/card';
 
 function Home() {
 	const [isClick, setClick] = useState(false);
-	
 	const handleClick = isClick ? false : true;
+
+	// temporary storage using context for development purposes
+	const { storage } = useStorage();
 
 	return (
 		<div className='h-screen w-full bg-gray-200 grid grid-cols-[1fr_300px]'>
@@ -16,7 +19,7 @@ function Home() {
 					<MainCard
 						title='Net Worth'
 						currency='$'
-						balance={10229}
+						balance={storage[0].netWorth}
 						date={`${new Date()}`}
 					/>
 				</div>
@@ -25,7 +28,7 @@ function Home() {
 					<div className='bg-yellow-400 row-start-1 row-end-2'>
 						<SubCard
 							title='Total Assets'
-							balance={1092818.222}
+							balance={storage[0].totalAssets}
 							currency='$'
 							date={`${new Date()}`}
 						/>
@@ -33,7 +36,7 @@ function Home() {
 					<div className='bg-red-400'>
 						<SubCard
 							title='Total Liabilities'
-							balance={20382818.222}
+							balance={storage[0].totalLiabilities}
 							currency='$'
 							date={`${new Date()}`}
 						/>
