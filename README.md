@@ -37,3 +37,6 @@ An organized and accesible financial manager dedicated to track personal finance
     - Prisma (For ORM)
     - Postgresql (For data persistence)
 
+- **Resources and API**
+
+    - [date-fns](https://github.com/date-fns/date-fns) for date formatting
