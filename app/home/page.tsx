@@ -17,13 +17,13 @@ function Home() {
 		<div className='h-screen w-full bg-gray-200 grid grid-cols-[1fr_300px]'>
 			<section className='bg-green-400 grid grid-cols-2 grid-rows-2 place-items-center gap-[1rem] p-[1rem]'>
 				<MainCard
-					style='bg-(--card-background) w-full min-h-[80%] col-start-[1] col-end-[2] rounded-lg flex flex-col justify-between p-[1rem]'
+					style='bg-(--card-background) w-full min-h-[100%] col-start-[1] col-end-[2] rounded-lg flex flex-col justify-between p-[1rem]'
 					title='Net Worth'
 					currency='$'
 					balance={storage[0].netWorth}
 					date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
 				/>
-				<div className='w-full min-h-[80%] grid grid-rows-2 gap-[12px] '>
+				<div className='w-full min-h-[100%] grid grid-rows-2 gap-[12px] '>
 					<SubCard
 						style='bg-(--card-background) row-start-1 row-end-2 rounded-lg flex flex-col justify-between p-[1rem]'
 						title='Assets'
