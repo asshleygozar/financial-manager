@@ -3,7 +3,7 @@ import { NavigationButton } from './ui/navbutton';
 
 function LeftSidebar() {
 	return (
-		<aside>
+		<aside className='border-r-1 border-r-white-10'>
 			<h1>Finance</h1>
 
 			<NavigationButton
