@@ -1,15 +1,23 @@
+import styles from '@/styles/components/modal.module.css';
+
 function Modal() {
 	return (
-		<div className='bg-zinc-400 max-w-md h-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[32px]  '>
-			<h1>New Transaction</h1>
-			<nav>
-				<button>Expense</button>
-				<button>Income</button>
-				<button>Transfer</button>
+		<div
+			id={styles.modalContainer}
+			className='max-w-md h-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[32px] rounded-lg flex flex-col gap-[1rem]'
+		>
+			<h1 className={styles.header}>New Transaction</h1>
+			<nav className={styles.navigation}>
+				<button className={styles.expenseButton}>Expense</button>
+				<button className={styles.inconeButton}>Income</button>
+				<button className={styles.transferButton}>Transfer</button>
 			</nav>
-			<form>
+			<form className={styles.form}>
 				<div>
-					<label htmlFor='amount'>
+					<label
+						htmlFor='amount'
+						className=''
+					>
 						Amount
 						<input
 							id='amount'
@@ -18,9 +26,11 @@ function Modal() {
 						/>
 					</label>
 					<label htmlFor='accounts'>
+						Account
 						<select
 							name='accounts'
 							id='accounts'
+							className={styles.selector}
 						>
 							<option value='cash'>Cash</option>
 							<option value='gotyme'>GoTyme</option>
@@ -34,6 +44,7 @@ function Modal() {
 						<select
 							name='category'
 							id='category'
+							className={styles.selector}
 						>
 							<optgroup label='food-and-drinks'>
 								<option value='restaurant'>Restaurant</option>
@@ -49,13 +60,15 @@ function Modal() {
 					</label>
 				</div>
 				<label htmlFor='description'>
+					Description
 					<textarea
+						className={styles.description}
 						name='description'
 						id='description'
 						placeholder='Enter description (optional)'
 					></textarea>
 				</label>
-                <button type="submit">Save</button>
+				<button type='submit' className={styles.saveButton}>Save</button>
 			</form>
 		</div>
 	);
