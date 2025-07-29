@@ -1,0 +1,97 @@
+#modalContainer {
+	background-color: #1d2239;
+    max-width: 500px;
+    width: 50%;
+    min-width: 400px;
+    max-height: max-content;
+}
+
+.header {
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	background-color: #141724;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+}
+
+.navigation > button {
+    width: 100%;
+	border-radius: 0.5rem;
+	background-color: rgb(11, 14, 21);
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.navigation > button:hover {
+	background-color: #181622;
+}
+
+.navigation > :nth-child(1) {
+	color: rgb(150, 26, 26);
+}
+
+.navigation > :nth-child(2) {
+	color: rgb(18, 161, 18);
+}
+
+.navigation > :nth-child(3) {
+	color: rgb(26, 102, 195);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form input {
+    margin-top: 0.5rem;
+    display: block;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+}
+
+.selector {
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #141724;
+    padding: 1rem;
+    width: 100%;
+}
+
+.description {
+    margin-top: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+}
+
+.saveButton {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background-color: #181622;
+    border-radius: 0.5rem;
+    transition: background-color 0.1s ease-out;
+}
+
+.saveButton:hover {
+    background-color: #141724;
+}
