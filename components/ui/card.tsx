@@ -22,15 +22,15 @@ function MainCard({ style, title, balance, currency, date }: Cards) {
 	);
 }
 
-function SubCard({ style, headColor, title, balance, currency, date }: Cards) {
+function SubCard({ headColor, title, balance, currency, date }: Cards) {
 	return (
-		<div className={style}>
+		<div className='bg-(--card-background) rounded-lg flex flex-col justify-between p-[1rem]'>
 			<h1 className={headColor}>{title}</h1>
-			<h2 className="text-[1.7rem]">
+			<h2 className='text-[1.7rem]'>
 				<span>{currency}</span>
 				{balance}
 			</h2>
-			<h3 className="justify-self-end self-end text-[0.8rem]">
+			<h3 className='justify-self-end self-end text-[0.8rem]'>
 				As of <span>{date}</span>
 			</h3>
 		</div>

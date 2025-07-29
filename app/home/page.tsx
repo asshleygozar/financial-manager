@@ -25,7 +25,6 @@ function Home() {
 				/>
 				<div className='w-full min-h-[100%] grid grid-rows-2 gap-[12px] '>
 					<SubCard
-						style='bg-(--card-background) row-start-1 row-end-2 rounded-lg flex flex-col justify-between p-[1rem]'
 						title='Assets'
 						headColor='text-[1.1rem] text-green-500'
 						balance={storage[0].totalAssets}
@@ -33,7 +32,6 @@ function Home() {
 						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
 					/>
 					<SubCard
-						style='bg-(--card-background) row-start-2 row-end-3 rounded-lg flex flex-col justify-between p-[1rem]'
 						title='Liabilities'
 						headColor='text[1.1rem] text-red-500'
 						balance={storage[0].totalLiabilities}
