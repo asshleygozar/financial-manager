@@ -1,6 +1,18 @@
+'use client';
 import styles from '@/styles/components/modal.module.css';
+import { FormEvent, useState } from 'react';
 
 function Modal() {
+	const [transaction, setTransaction] = useState({
+		amount: 0,
+		accounts: '',
+		category: '',
+		description: '',
+	});
+
+	const [feedback, setFeedback] = useState('');
+
+	
 	return (
 		<div
 			id={styles.modalContainer}
@@ -12,17 +24,27 @@ function Modal() {
 				<button className={styles.inconeButton}>Income</button>
 				<button className={styles.transferButton}>Transfer</button>
 			</nav>
-			<form className={styles.form}>
+			<form
+				className={styles.form}
+			>
 				<div>
 					<label
 						htmlFor='amount'
 						className=''
 					>
 						Amount
+						<span> {feedback}</span>
 						<input
 							id='amount'
 							type='number'
 							placeholder='Enter amount'
+							value={transaction.amount}
+							onChange={(e) =>
+								setTransaction((prev) => ({
+									...prev,
+									amount: Number(e.target.value),
+								}))
+							}
 						/>
 					</label>
 					<label htmlFor='accounts'>
@@ -31,6 +53,12 @@ function Modal() {
 							name='accounts'
 							id='accounts'
 							className={styles.selector}
+							onChange={(e) =>
+								setTransaction((prev) => ({
+									...prev,
+									accounts: e.target.value,
+								}))
+							}
 						>
 							<option value='cash'>Cash</option>
 							<option value='gotyme'>GoTyme</option>
@@ -45,6 +73,12 @@ function Modal() {
 							name='category'
 							id='category'
 							className={styles.selector}
+							onChange={(e) =>
+								setTransaction((prev) => ({
+									...prev,
+									category: e.target.value,
+								}))
+							}
 						>
 							<optgroup label='food-and-drinks'>
 								<option value='restaurant'>Restaurant</option>
@@ -66,9 +100,20 @@ function Modal() {
 						name='description'
 						id='description'
 						placeholder='Enter description (optional)'
+						onChange={(e) =>
+							setTransaction((prev) => ({
+								...prev,
+								description: e.target.value,
+							}))
+						}
 					></textarea>
 				</label>
-				<button type='submit' className={styles.saveButton}>Save</button>
+				<button
+					type='submit'
+					className={styles.saveButton}
+				>
+					Save
+				</button>
 			</form>
 		</div>
 	);
