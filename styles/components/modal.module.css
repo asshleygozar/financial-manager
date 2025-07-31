@@ -67,6 +67,10 @@
     outline: none;
 }
 
+.form input[type=number] {
+    appearance: textfield;
+}
+
 .selector {
     margin-top: 0.5rem;
     border-radius: 0.5rem;
