@@ -1,8 +1,17 @@
 'use client';
+import { useStorage } from '@/context/useStorage';
 import styles from '@/styles/components/modal.module.css';
-import { FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 function Modal() {
+	const {
+		netWorth,
+		totalAssets,
+		totalLiabilities,
+		setNetWorth,
+		setTotalAssets,
+		setTotalLiabilities,
+	} = useStorage();
 	const [transaction, setTransaction] = useState({
 		amount: 0,
 		accounts: '',
@@ -10,9 +19,17 @@ function Modal() {
 		description: '',
 	});
 
-	const [feedback, setFeedback] = useState('');
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		const newNetWorth = netWorth + transaction.amount;
+		const newTotalAssets = totalAssets + transaction.amount;
+		const newTotalLiabilities = totalLiabilities + transaction.amount;
 
-	
+		setNetWorth(newNetWorth);
+		setTotalAssets(newTotalAssets);
+		setTotalLiabilities(newTotalLiabilities);
+	};
+
 	return (
 		<div
 			id={styles.modalContainer}
@@ -26,6 +43,7 @@ function Modal() {
 			</nav>
 			<form
 				className={styles.form}
+				onSubmit={handleSubmit}
 			>
 				<div>
 					<label
@@ -33,18 +51,20 @@ function Modal() {
 						className=''
 					>
 						Amount
-						<span> {feedback}</span>
+						<span> {''}</span>
 						<input
 							id='amount'
 							type='number'
 							placeholder='Enter amount'
-							value={transaction.amount}
-							onChange={(e) =>
+							value={transaction.amount === 0 ? '' : transaction.amount}
+							onChange={(e: ChangeEvent<HTMLInputElement>) => {
+								const value = e.target.value;
+								const numericValue = value === '' ? 0 : parseInt(value, 10);
 								setTransaction((prev) => ({
 									...prev,
-									amount: Number(e.target.value),
-								}))
-							}
+									amount: numericValue,
+								}));
+							}}
 						/>
 					</label>
 					<label htmlFor='accounts'>
