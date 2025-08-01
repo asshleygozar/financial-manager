@@ -45,7 +45,7 @@ function AccountCard({
 	accountCategory,
 }: Cards) {
 	return (
-		<div>
+		<div className={`${styles.accountCard} ${styles.card}`}>
 			<h1>{title}</h1>
 			<h2>
 				<span>{currency}</span>
