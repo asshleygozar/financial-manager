@@ -13,14 +13,20 @@ function Modal() {
 		setTotalLiabilities,
 	} = useStorage();
 	const [transaction, setTransaction] = useState({
+		type: 'expense',
 		amount: 0,
 		accounts: '',
 		category: '',
 		description: '',
 	});
+	const [feedback, setFeedback] = useState('');
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		if (!transaction.amount) {
+			setFeedback('Amount should not be zero or empty!');
+			return;
+		}
 		const newNetWorth = netWorth + transaction.amount;
 		const newTotalAssets = totalAssets + transaction.amount;
 		const newTotalLiabilities = totalLiabilities + transaction.amount;
@@ -30,6 +36,13 @@ function Modal() {
 		setTotalLiabilities(newTotalLiabilities);
 	};
 
+	const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const inputValue = e.target.value;
+		if (inputValue === '' || /^-?\d*\.?\d*$/.test(inputValue)) {
+			setTransaction((prev) => ({ ...prev, amount: parseInt(inputValue, 10) }));
+		}
+	};
+
 	return (
 		<div
 			id={styles.modalContainer}
@@ -37,9 +50,30 @@ function Modal() {
 		>
 			<h1 className={styles.header}>New Transaction</h1>
 			<nav className={styles.navigation}>
-				<button className={styles.expenseButton}>Expense</button>
-				<button className={styles.inconeButton}>Income</button>
-				<button className={styles.transferButton}>Transfer</button>
+				<button
+					className={transaction.type === 'expense' ? styles.active : ''}
+					onClick={() =>
+						setTransaction((prev) => ({ ...prev, type: 'expense' }))
+					}
+				>
+					Expense
+				</button>
+				<button
+					className={transaction.type === 'income' ? styles.active : ''}
+					onClick={() =>
+						setTransaction((prev) => ({ ...prev, type: 'income' }))
+					}
+				>
+					Income
+				</button>
+				<button
+					className={transaction.type === ' transfer' ? styles.active : ''}
+					onClick={() =>
+						setTransaction((prev) => ({ ...prev, type: 'transfer' }))
+					}
+				>
+					Transfer
+				</button>
 			</nav>
 			<form
 				className={styles.form}
@@ -51,20 +85,13 @@ function Modal() {
 						className=''
 					>
 						Amount
-						<span> {''}</span>
+						<span> {feedback}</span>
 						<input
 							id='amount'
 							type='number'
 							placeholder='Enter amount'
 							value={transaction.amount === 0 ? '' : transaction.amount}
-							onChange={(e: ChangeEvent<HTMLInputElement>) => {
-								const value = e.target.value;
-								const numericValue = value === '' ? 0 : parseInt(value, 10);
-								setTransaction((prev) => ({
-									...prev,
-									amount: numericValue,
-								}));
-							}}
+							onChange={handleAmountChange}
 						/>
 					</label>
 					<label htmlFor='accounts'>
