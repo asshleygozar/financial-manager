@@ -1,14 +1,15 @@
 import Link from 'next/link';
 
 type NavigationButtonProperties = {
+	className?: string;
 	icon: React.ReactNode;
 	linkName: string;
 	path: string;
 };
 
-function NavigationButton({ icon, linkName, path }: NavigationButtonProperties) {
+function NavigationButton({ className, icon, linkName, path }: NavigationButtonProperties) {
 	return (
-		<div>
+		<div className={className}>
 			<span>{icon}</span>
 			<Link href={path}>{linkName}</Link>
 		</div>
