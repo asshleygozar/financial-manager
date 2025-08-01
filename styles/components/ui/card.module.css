@@ -1,8 +1,12 @@
 .card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	border-radius: 16px;
 	padding: 1rem;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: var(--bg-foreground);
+	color: var(--bg-foreground);
+	width: 100%;
 }
 
 .card > h1 {
@@ -10,8 +14,14 @@
 	font-weight: bold;
 }
 
+.card  h2 {
+	display: flex;
+	gap: 0.5rem;
+	font-family: var(--font-outfit);
+}
+
 .card > h3 {
-    align-self: flex-end;
+	align-self: flex-end;
 }
 
 .mainCard > h1 {
@@ -27,7 +37,6 @@
 }
 
 .subCard > h2 {
-	font-family: var(--font-outfit);
 	font-size: 2rem;
 }
 
@@ -35,14 +44,28 @@
 	background-color: var(--accent-green);
 	width: 100%;
 	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 }
 
 .subCard {
 	background-color: var(--accent-blue);
+}
+
+.accountCard {
+	padding: 0.8rem 1rem;
+	background-color: var(--accent-yellow);
+}
+
+.accountCard > h1 {
+	font-size: 1.3rem;
+}
+
+.accountCard > h2 {
+	font-size: 1.2rem;
+}
+
+.accountCard > div {
 	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
 }
+
+

@@ -44,7 +44,41 @@ function Home() {
 			</section>
 			<section className='bg-blue-400'>
 				<RightSideBar>
-					<div>Children nodes here</div>
+					<AccountCard
+						title='Balance'
+						currency='$'
+						balance={39273}
+						accountName='GOTyme'
+						accountCategory='Bank'
+					/>
+					<AccountCard
+						title='Balance'
+						currency='$'
+						balance={39273}
+						accountName='GOTyme'
+						accountCategory='Bank'
+					/>
+					<AccountCard
+						title='Balance'
+						currency='$'
+						balance={39273}
+						accountName='GOTyme'
+						accountCategory='Bank'
+					/>
+					<AccountCard
+						title='Balance'
+						currency='$'
+						balance={39273}
+						accountName='GOTyme'
+						accountCategory='Bank'
+					/>
+					<AccountCard
+						title='Balance'
+						currency='$'
+						balance={39273}
+						accountName='GOTyme'
+						accountCategory='Bank'
+					/>
 					<AccountCard
 						title='Balance'
 						currency='$'
