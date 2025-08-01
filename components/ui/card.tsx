@@ -1,8 +1,8 @@
 import styles from '@/styles/components/ui/card.module.css';
 type Cards = {
-	title: string;
+	title?: string;
 	balance: number;
-	currency: string;
+	currency?: string;
 	date?: string;
 	headColor?: string;
 	accountName?: string;
@@ -37,18 +37,12 @@ function SubCard({ title, balance, currency, date }: Cards) {
 	);
 }
 
-function AccountCard({
-	title,
-	currency,
-	balance,
-	accountName,
-	accountCategory,
-}: Cards) {
+function AccountCard({ balance, accountName, accountCategory }: Cards) {
 	return (
 		<div className={`${styles.accountCard} ${styles.card}`}>
-			<h1>{title}</h1>
+			<h1>Balance</h1>
 			<h2>
-				<span>{currency}</span>
+				<span>$</span>
 				{balance}
 			</h2>
 			<div>
