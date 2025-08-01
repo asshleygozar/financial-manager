@@ -97,10 +97,13 @@
 	transition: background-color 0.1s ease-out;
 }
 
-.saveButton:hover {
+.navigation > .active {
+	background-color: white;
+}
+
+.saveButton:hover{
 	background-color: #141724;
 }
 
-.active {
-	background-color: white;
-}
+
+
