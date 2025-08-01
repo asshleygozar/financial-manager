@@ -1,4 +1,5 @@
 'use client';
+import styles from '@/styles/home.module.css';
 import { format } from 'date-fns';
 import { useState } from 'react';
 import { useStorage } from '@/context/useStorage';
@@ -14,10 +15,9 @@ function Home() {
 	const { netWorth, totalAssets, totalLiabilities } = useStorage();
 
 	return (
-		<div className='h-screen w-full bg-gray-200 grid grid-cols-[1fr_300px]'>
-			<section className='bg-(--background) grid grid-cols-2 grid-rows-2 place-items-center gap-[1rem] p-[1rem]'>
+		<div className={styles.container}>
+			<section className={styles.content}>
 				<MainCard
-					style='bg-(--card-background) w-full min-h-[100%] col-start-[1] col-end-[2] rounded-lg flex flex-col justify-between p-[1rem]'
 					title='Net Worth'
 					currency='$'
 					balance={netWorth}
@@ -26,14 +26,12 @@ function Home() {
 				<div className='w-full min-h-[100%] grid grid-rows-2 gap-[12px] '>
 					<SubCard
 						title='Assets'
-						headColor='text-[1.1rem] text-green-500'
 						balance={totalAssets}
 						currency='$'
 						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
 					/>
 					<SubCard
 						title='Liabilities'
-						headColor='text[1.1rem] text-red-500'
 						balance={totalLiabilities}
 						currency='$'
 						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}

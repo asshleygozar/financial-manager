@@ -2,26 +2,25 @@
 
 import { useState, useContext, createContext } from 'react';
 
-type BalanceType = {
+type StorageContextType = {
 	netWorth: number;
+	setNetWorth: React.Dispatch<React.SetStateAction<number>>;
 	totalAssets: number;
+	setTotalAssets: React.Dispatch<React.SetStateAction<number>>;
 	totalLiabilities: number;
-};
+	setTotalLiabilities: React.Dispatch<React.SetStateAction<number>>;
+}
 
-type StorageType = {
-	storage: BalanceType[];
-	setStorage: React.Dispatch<React.SetStateAction<BalanceType[]>>;
-};
-
-const StorageContext = createContext<StorageType | null>(null);
+const StorageContext = createContext<StorageContextType | undefined>(undefined);
 
 export function StorageProvider({ children }: { children: React.ReactNode }) {
-	const [storage, setStorage] = useState<BalanceType[]>([
-		{ netWorth: 100000, totalAssets: 2000, totalLiabilities: 0 },
-	]);
+	
+	const [netWorth, setNetWorth] = useState(0);
+	const [totalAssets, setTotalAssets] = useState(0);
+	const [totalLiabilities, setTotalLiabilities] = useState(0);
 
 	return (
-		<StorageContext.Provider value={{ storage, setStorage }}>
+		<StorageContext.Provider value={{ netWorth, setNetWorth, totalAssets, setTotalAssets, totalLiabilities, setTotalLiabilities}}>
 			{children}
 		</StorageContext.Provider>
 	);

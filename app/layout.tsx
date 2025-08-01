@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { Outfit, Quicksand } from 'next/font/google';
 import './globals.css';
 import LeftSidebar from '@/components/LeftSidebar';
 import { StorageProvider } from '@/context/useStorage';
@@ -8,6 +8,11 @@ const outfit = Outfit({
 	variable: '--font-outfit',
 	subsets: ['latin'],
 });
+
+const quickSand = Quicksand({
+	variable: '--font-quick-sand',
+	subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
 	title: 'Financial Manager',
@@ -21,7 +26,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${outfit.variable} antialiased`}>
+			<body className={`${outfit.variable} ${quickSand.variable} antialiased`}>
 				<div className='grid grid-cols-[250px_1fr]'>
 					<StorageProvider>
 						<LeftSidebar />
