@@ -27,6 +27,7 @@ An organized and accesible financial manager dedicated to track personal finance
     - React
     - Typescipt
     - CSS module
+    - LineIcons (For UI Icons)
     - Shadcn/ui Components
     - Recharts (For data visualization)
 
