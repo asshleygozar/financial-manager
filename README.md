@@ -26,7 +26,7 @@ An organized and accesible financial manager dedicated to track personal finance
     - Next.js 15
     - React
     - Typescipt
-    - Tailwind CSS
+    - CSS module
     - Shadcn/ui Components
     - Recharts (For data visualization)
 
