@@ -38,8 +38,9 @@ function Home() {
 					<h1>Chart here</h1>
 				</div>
 			</section>
-			<section className='bg-blue-400'>
+			<section>
 				<RightSideBar>
+					{/* Try to map here the accounts */}
 					<AccountCard
 						title='Balance'
 						currency='$'
