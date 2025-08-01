@@ -12,7 +12,7 @@ const outfit = Outfit({
 const quickSand = Quicksand({
 	variable: '--font-quick-sand',
 	subsets: ['latin'],
-})
+});
 
 export const metadata: Metadata = {
 	title: 'Financial Manager',
