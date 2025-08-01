@@ -1,4 +1,9 @@
+'use client';
+import { useStorage } from '@/context/useStorage';
+import Modal from '@/components/Modal';
+
 function Accounts() {
+	const { isClick } = useStorage();
 	return (
 		<div>
 			<nav>Accounts</nav>
@@ -27,6 +32,7 @@ function Accounts() {
 					</div>
 				</div>
 			</section>
+			{isClick ? <Modal /> : ''}
 		</div>
 	);
 }
