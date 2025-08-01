@@ -1,9 +1,9 @@
 #modalContainer {
 	background-color: #1d2239;
-    max-width: 500px;
-    width: 50%;
-    min-width: 400px;
-    max-height: max-content;
+	max-width: 500px;
+	width: 50%;
+	min-width: 400px;
+	max-height: max-content;
 }
 
 .header {
@@ -21,7 +21,7 @@
 }
 
 .navigation > button {
-    width: 100%;
+	width: 100%;
 	border-radius: 0.5rem;
 	background-color: rgb(11, 14, 21);
 	padding: 0.5rem 1rem;
@@ -46,56 +46,61 @@
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .form > div {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .form input {
-    margin-top: 0.5rem;
-    display: block;
-    width: 100%;
-    border: 1px solid grey;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    outline: none;
+	margin-top: 0.5rem;
+	display: block;
+	width: 100%;
+	border: 1px solid grey;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	outline: none;
 }
 
-.form input[type=number] {
-    appearance: textfield;
+.form input[type='number'] {
+	-moz-appearance: textfield;
+	appearance: textfield;
 }
 
 .selector {
-    margin-top: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: #141724;
-    padding: 1rem;
-    width: 100%;
+	margin-top: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: #141724;
+	padding: 1rem;
+	width: 100%;
 }
 
 .description {
-    margin-top: 0.5rem;
-    border: 1px solid grey;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    width: 100%;
-    outline: none;
+	margin-top: 0.5rem;
+	border: 1px solid grey;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	width: 100%;
+	outline: none;
 }
 
 .saveButton {
-    padding: 0.5rem 1rem;
-    width: 100%;
-    background-color: #181622;
-    border-radius: 0.5rem;
-    transition: background-color 0.1s ease-out;
+	padding: 0.5rem 1rem;
+	width: 100%;
+	background-color: #181622;
+	border-radius: 0.5rem;
+	transition: background-color 0.1s ease-out;
 }
 
 .saveButton:hover {
-    background-color: #141724;
+	background-color: #141724;
+}
+
+.active {
+	background-color: white;
 }
