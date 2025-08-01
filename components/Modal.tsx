@@ -34,11 +34,24 @@ function Modal() {
 		setNetWorth(newNetWorth);
 		setTotalAssets(newTotalAssets);
 		setTotalLiabilities(newTotalLiabilities);
+
+		const transactionInformation = {
+			transactionType: transaction.type,
+			transactionAmount: transaction.amount,
+			transactionAccount: transaction.accounts,
+			transactionCategory: transaction.category,
+			transactionDescription: transaction.description,
+		};
+
+		const jsonString = JSON.stringify(transactionInformation);
+
+		clientRequest(jsonString);
 	};
 
 	const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const inputValue = e.target.value;
-		if (inputValue === '' || /^-?\d*\.?\d*$/.test(inputValue)) {
+		const testValue = /^-?\d*\.?\d*$/.test(inputValue);
+		if (testValue) {
 			setTransaction((prev) => ({ ...prev, amount: parseInt(inputValue, 10) }));
 		}
 	};
@@ -67,7 +80,7 @@ function Modal() {
 					Income
 				</button>
 				<button
-					className={transaction.type === ' transfer' ? styles.active : ''}
+					className={transaction.type === 'transfer' ? styles.active : ''}
 					onClick={() =>
 						setTransaction((prev) => ({ ...prev, type: 'transfer' }))
 					}
@@ -164,6 +177,20 @@ function Modal() {
 			</form>
 		</div>
 	);
+}
+
+async function clientRequest(data: string) {
+	const fetchRequest = await fetch('/transaction', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			Accept: 'application/json',
+		},
+		body: data,
+	});
+
+	const response = await fetchRequest.json();
+	return response;
 }
 
 export default Modal;
