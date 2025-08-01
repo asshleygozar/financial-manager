@@ -5,6 +5,7 @@ import { useStorage } from '@/context/useStorage';
 import RightSideBar from '@/components/RightSideBar';
 import { MainCard, SubCard, AccountCard } from '@/components/ui/card';
 import Modal from '@/components/Modal';
+import accounts from '@/utils/accounts';
 
 function Home() {
 	// temporary storage using context for development purposes
@@ -40,42 +41,14 @@ function Home() {
 			</section>
 			<section>
 				<RightSideBar>
-					{/* Try to map here the accounts */}
-					<AccountCard
-						title='Balance'
-						currency='$'
-						balance={39273}
-						accountName='GOTyme'
-						accountCategory='Bank'
-					/>
-					<AccountCard
-						title='Balance'
-						currency='$'
-						balance={39273}
-						accountName='GOTyme'
-						accountCategory='Bank'
-					/>
-					<AccountCard
-						title='Balance'
-						currency='$'
-						balance={39273}
-						accountName='GOTyme'
-						accountCategory='Bank'
-					/>
-					<AccountCard
-						title='Balance'
-						currency='$'
-						balance={39273}
-						accountName='GOTyme'
-						accountCategory='Bank'
-					/>
-					<AccountCard
-						title='Balance'
-						currency='$'
-						balance={39273}
-						accountName='GOTyme'
-						accountCategory='Bank'
-					/>
+					{accounts.map((account) => (
+						<AccountCard
+							key={account.id}
+							balance={account.balance}
+							accountName={account.accountName}
+							accountCategory={account.accountCategory}
+						/>
+					))}
 				</RightSideBar>
 			</section>
 			{isClick ? <Modal /> : ''}
