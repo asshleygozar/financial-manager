@@ -9,12 +9,12 @@ type Cards = {
 	accountCategory?: string;
 };
 
-function MainCard({ title, balance, currency, date }: Cards) {
+function MainCard({ title, balance, date }: Cards) {
 	return (
 		<div className={`${styles.mainCard} ${styles.card}`}>
 			<h1>{title}</h1>
 			<h2>
-				<span>{currency} </span>
+				<span>{'$'} </span>
 				{balance}
 			</h2>
 			<h3>As of {date}</h3>

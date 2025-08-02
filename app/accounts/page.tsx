@@ -1,36 +1,32 @@
 'use client';
 import { useStorage } from '@/context/useStorage';
 import Modal from '@/components/Modal';
+import styles from '@/styles/accounts.module.css';
+import { MainCard, AccountCard } from '@/components/ui/card';
+import { format } from 'date-fns';
+import accounts from '@/utils/accounts';
 
 function Accounts() {
 	const { isClick } = useStorage();
 	return (
-		<div>
-			<nav>Accounts</nav>
+		<div className={styles.container}>
 			<section>
 				{/* Total amount here*/}
-				<div>
-					<h1>Current total balance</h1>
-					<h2>
-						<span>$</span>1,000,000
-					</h2>
-					<h3>Overall</h3>
-				</div>
+				<MainCard
+					title='Total balance'
+					balance={2928}
+					date={`${format(new Date(), 'MMMM, dd, yyyy')}`}
+				/>
 			</section>
-			<section>
-				{' '}
-				{/*Accounts container here*/}
-				{/* Maybe use map here to generate dynamic accounts */}
-				<div>
-					<h1>Balance</h1>
-					<h2>
-						<span>$</span>1,000,000
-					</h2>
-					<div>
-						<span>Cash</span>
-						<span>Cash</span>
-					</div>
-				</div>
+			<section className={styles.accountsContainer}>
+				{accounts.map((account) => (
+					<AccountCard
+						key={account.id}
+						balance={account.balance}
+						accountName={account.accountName}
+						accountCategory={account.accountCategory}
+					/>
+				))}
 			</section>
 			{isClick ? <Modal /> : ''}
 		</div>

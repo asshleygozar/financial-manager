@@ -21,6 +21,8 @@
 }
 
 .card > h3 {
+	font-size: 1.1rem;
+	font-family: var(--font-outfit);
 	align-self: flex-end;
 }
 
@@ -51,8 +53,9 @@
 }
 
 .accountCard {
+	height: 100%;
 	padding: 0.8rem 1rem;
-	background-color: var(--accent-yellow);
+	background-color: var(--accent-red);
 }
 
 .accountCard > h1 {
