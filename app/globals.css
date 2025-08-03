@@ -3,8 +3,10 @@
 :root {
 	--background: #ffffff;
 	--foreground: #697586;
+	--head-foreground: #000;
+	--input-background: rgb(235, 231, 231);
 	--bg-foreground: #fff;
-	--card-background: #181622;
+	--card-background: #fff;
 	--accent-red: #f28b82;
 	--accent-blue: #aecbfa;
 	--accent-green: #a8d5ba;
