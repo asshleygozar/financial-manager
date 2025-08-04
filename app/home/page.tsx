@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { useStorage } from '@/context/useStorage';
 import RightSideBar from '@/components/RightSideBar';
 import { MainCard, SubCard, AccountCard } from '@/components/ui/card';
-import Modal from '@/components/Modal';
+import Modal from '@/components/NewTransactionModal';
 import accounts from '@/utils/accounts';
 
 function Home() {
