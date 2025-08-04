@@ -1,6 +1,6 @@
 'use client';
 import { useStorage } from '@/context/useStorage';
-import Modal from '@/components/Modal';
+import Modal from '@/components/NewTransactionModal';
 import styles from '@/styles/accounts.module.css';
 import { MainCard, AccountCard } from '@/components/ui/card';
 import { format } from 'date-fns';
