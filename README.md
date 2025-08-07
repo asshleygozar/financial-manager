@@ -11,6 +11,9 @@ An organized and accesible financial manager dedicated to track personal finance
     - generate monthly/yearly financial report in pdf format
     - structured and organized financial report format
 
+- **Investments**
+    - Allows real time tracking of invesments such as stocks and cryptocurrencies
+
 - **Data visualization**
     - Bar chart
     - Line chart
