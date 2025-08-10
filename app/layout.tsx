@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Outfit, Quicksand } from 'next/font/google';
 import './globals.css';
-import LeftSidebar from '@/components/LeftSidebar';
 import { StorageProvider } from '@/context/useStorage';
 
 const outfit = Outfit({
@@ -27,11 +26,8 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${outfit.variable} ${quickSand.variable} antialiased`}>
-				<div className='grid grid-cols-[250px_1fr]'>
-					<StorageProvider>
-						<LeftSidebar />
-						{children}
-					</StorageProvider>
+				<div>
+					<StorageProvider>{children}</StorageProvider>
 				</div>
 			</body>
 		</html>
