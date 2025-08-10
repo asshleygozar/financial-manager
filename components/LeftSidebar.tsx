@@ -20,28 +20,28 @@ function LeftSidebar() {
 			</button>
 
 			<NavigationButton
-				className={pathname === '/home' ? styles.active : ''}
+				className={pathname === '/dashboard' ? styles.active : ''}
 				icon={<Home />}
 				linkName='Home'
-				path='/home'
+				path='/dashboard/'
 			/>
 			<NavigationButton
-				className={pathname === '/accounts' ? styles.active : ''}
+				className={pathname === '/dashboard/accounts' ? styles.active : ''}
 				icon={<Account />}
 				linkName='Accounts'
-				path='/accounts'
+				path='/dashboard/accounts'
 			/>
 			<NavigationButton
-				className={pathname === '/investments' ? styles.active : ''}
+				className={pathname === '/dashboard/investments' ? styles.active : ''}
 				icon={<Investment />}
 				linkName='Investments'
-				path='/investments'
+				path='/dashboard/investments'
 			/>
 			<NavigationButton
-				className={pathname === '/settings' ? styles.active : ''}
+				className={pathname === '/dashboard/settings' ? styles.active : ''}
 				icon={<Settings />}
 				linkName='Settings'
-				path='/settings'
+				path='/dashboard/settings'
 			/>
 		</aside>
 	);
