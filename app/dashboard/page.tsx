@@ -6,11 +6,17 @@ import RightSideBar from '@/components/RightSideBar';
 import { MainCard, SubCard, AccountCard } from '@/components/ui/card';
 import Modal from '@/components/NewTransactionModal';
 import accounts from '@/utils/accounts';
+import { useEffect, useState } from 'react';
 
 function Home() {
 	// temporary storage using context for development purposes
 	const { isClick, netWorth, totalAssets, totalLiabilities } = useStorage();
-	const timeStamp = format(new Date(), 'MMMM, dd, yyyy');
+	const [timeStamp, setTimeStamp] = useState('');
+
+	useEffect(() => {
+		const formattedDate = format(new Date(), 'MMMM, dd, yyyy');
+		setTimeStamp(formattedDate);
+	}, []);
 
 	return (
 		<div className={styles.container}>
