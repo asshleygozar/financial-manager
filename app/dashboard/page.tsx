@@ -4,9 +4,10 @@ import { format } from 'date-fns';
 import { useStorage } from '@/context/useStorage';
 import RightSideBar from '@/components/RightSideBar';
 import { MainCard, SubCard, AccountCard } from '@/components/ui/card';
-import Modal from '@/components/NewTransactionModal';
+import MainModal from '@/components/MainModal';
 import accounts from '@/utils/accounts';
 import { useEffect, useState } from 'react';
+import { NavigationProvider } from '@/context/useNavigation';
 
 function Home() {
 	// temporary storage using context for development purposes
@@ -58,7 +59,7 @@ function Home() {
 					))}
 				</RightSideBar>
 			</section>
-			{isClick ? <Modal /> : ''}
+			<NavigationProvider>{isClick ? <MainModal /> : ''}</NavigationProvider>
 		</div>
 	);
 }
