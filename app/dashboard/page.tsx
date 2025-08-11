@@ -10,6 +10,7 @@ import accounts from '@/utils/accounts';
 function Home() {
 	// temporary storage using context for development purposes
 	const { isClick, netWorth, totalAssets, totalLiabilities } = useStorage();
+	const timeStamp = format(new Date(), 'MMMM, dd, yyyy');
 
 	return (
 		<div className={styles.container}>
@@ -18,20 +19,20 @@ function Home() {
 					title='Net Worth'
 					currency='$'
 					balance={netWorth}
-					date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
+					date={`${timeStamp}`}
 				/>
 				<div className='w-full min-h-[100%] grid grid-rows-2 gap-[12px] '>
 					<SubCard
 						title='Assets'
 						balance={totalAssets}
 						currency='$'
-						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
+						date={`${timeStamp}`}
 					/>
 					<SubCard
 						title='Liabilities'
 						balance={totalLiabilities}
 						currency='$'
-						date={`${format(new Date(), 'MMMM, dd ,yyyy')}`}
+						date={`${timeStamp}`}
 					/>
 				</div>
 
