@@ -3,7 +3,7 @@ import { useStorage } from '@/context/useStorage';
 import styles from '@/styles/components/modal.module.css';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-function Modal() {
+function NewTransactionModal() {
 	const {
 		netWorth,
 		totalAssets,
@@ -57,10 +57,7 @@ function Modal() {
 	};
 
 	return (
-		<div
-			id={styles.modalContainer}
-			className='max-w-md h-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-[32px] rounded-lg flex flex-col gap-[1rem]'
-		>
+		<div id={styles.modalContainer}>
 			<h1 className={styles.header}>New Transaction</h1>
 			<nav className={styles.navigation}>
 				<button
@@ -193,4 +190,4 @@ async function clientRequest(data: string) {
 	return response;
 }
 
-export default Modal;
+export default NewTransactionModal;
