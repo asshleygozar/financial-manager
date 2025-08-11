@@ -26,9 +26,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${outfit.variable} ${quickSand.variable} antialiased`}>
-				<div>
-					<StorageProvider>{children}</StorageProvider>
-				</div>
+				<StorageProvider>{children}</StorageProvider>
 			</body>
 		</html>
 	);
