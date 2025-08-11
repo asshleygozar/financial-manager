@@ -20,25 +20,41 @@ function LeftSidebar() {
 			</button>
 
 			<NavigationButton
-				className={pathname === '/dashboard' ? styles.active : ''}
+				className={
+					pathname === '/dashboard'
+						? `${styles.active} ${styles.navigationButton}`
+						: `${styles.navigationButton}`
+				}
 				icon={<Home />}
 				linkName='Home'
 				path='/dashboard/'
 			/>
 			<NavigationButton
-				className={pathname === '/dashboard/accounts' ? styles.active : ''}
+				className={
+					pathname === '/dashboard/accounts'
+						? `${styles.active} ${styles.navigationButton}`
+						: `${styles.navigationButton}`
+				}
 				icon={<Account />}
 				linkName='Accounts'
 				path='/dashboard/accounts'
 			/>
 			<NavigationButton
-				className={pathname === '/dashboard/investments' ? styles.active : ''}
+				className={
+					pathname === '/dashboard/investments'
+						? `${styles.active} ${styles.navigationButton}`
+						: `${styles.navigationButton}`
+				}
 				icon={<Investment />}
 				linkName='Investments'
 				path='/dashboard/investments'
 			/>
 			<NavigationButton
-				className={pathname === '/dashboard/settings' ? styles.active : ''}
+				className={
+					pathname === '/dashboard/settings'
+						? `${styles.active} ${styles.navigationButton}`
+						: `${styles.navigationButton}`
+				}
 				icon={<Settings />}
 				linkName='Settings'
 				path='/dashboard/settings'

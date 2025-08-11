@@ -7,12 +7,20 @@ type NavigationButtonProperties = {
 	path: string;
 };
 
-function NavigationButton({ className, icon, linkName, path }: NavigationButtonProperties) {
+function NavigationButton({
+	className,
+	icon,
+	linkName,
+	path,
+}: NavigationButtonProperties) {
 	return (
-		<div className={className}>
+		<Link
+			href={path}
+			className={className}
+		>
 			<span>{icon}</span>
-			<Link href={path}>{linkName}</Link>
-		</div>
+			<span>{linkName}</span>
+		</Link>
 	);
 }
 

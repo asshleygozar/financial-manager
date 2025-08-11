@@ -5,9 +5,16 @@ import styles from '@/styles/accounts.module.css';
 import { MainCard, AccountCard } from '@/components/ui/card';
 import { format } from 'date-fns';
 import accounts from '@/utils/accounts';
+import { useState, useEffect } from 'react';
 
 function Accounts() {
 	const { isClick } = useStorage();
+	const [timeStamp, setTimeStamp] = useState('');
+
+	useEffect(() => {
+		const formattedDate = format(new Date(), 'MMMM, dd, yyyy');
+		setTimeStamp(formattedDate);
+	}, []);
 	return (
 		<div className={styles.container}>
 			<section>
@@ -15,7 +22,7 @@ function Accounts() {
 				<MainCard
 					title='Total balance'
 					balance={2928}
-					date={`${format(new Date(), 'MMMM, dd, yyyy')}`}
+					date={`${timeStamp}`}
 				/>
 			</section>
 			<section className={styles.accountsContainer}>
