@@ -1,9 +1,9 @@
 'use client';
 import styles from '@/styles/components/left-side-bar.module.css';
-import { NavigationButton } from './ui/navbutton';
+import { NavigationButton } from './ui/Navbutton';
 import { useStorage } from '@/context/useStorage';
 import { usePathname } from 'next/navigation';
-import { Home, Account, Investment, Settings } from './ui/icons';
+import { Home, Account, Investment, Settings } from './ui/Icons';
 
 function LeftSidebar() {
 	const pathname = usePathname();
