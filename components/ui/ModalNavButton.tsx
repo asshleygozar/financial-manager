@@ -16,13 +16,13 @@ const ModalNavigationButton = ({
 	setNavigation,
 }: ModalNavigationType) => {
 	return (
-		<div
+		<button
 			className={className}
 			onClick={() => setNavigation(path)}
 		>
 			<span>{icon}</span>
 			<span>{name}</span>
-		</div>
+		</button>
 	);
 };
 
