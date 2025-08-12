@@ -2,7 +2,7 @@
 import styles from '@/styles/components/modal-navigation.module.css';
 import ModalNavigationButton from './ui/ModalNavButton';
 import { useNavigation } from '@/context/useNavigation';
-import { Account, Home } from './ui/icons';
+import { Account, Home } from './ui/Icons';
 
 const ModalNavigation = () => {
 	const { navigation, setNavigation } = useNavigation();

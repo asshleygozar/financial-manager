@@ -3,7 +3,7 @@ import styles from '@/styles/home.module.css';
 import { format } from 'date-fns';
 import { useStorage } from '@/context/useStorage';
 import RightSideBar from '@/components/RightSideBar';
-import { MainCard, SubCard, AccountCard } from '@/components/ui/card';
+import { MainCard, SubCard, AccountCard } from '@/components/ui/Card';
 import MainModal from '@/components/MainModal';
 import accounts from '@/utils/accounts';
 import { useEffect, useState } from 'react';
